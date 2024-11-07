@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Header with Language Selector</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Header styling */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #65558f;
+      padding: 10px 30px 15px 30px;
+    }
+
+    /* Logo on the left */
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    /* Centered navigation styling */
+    nav {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ddd;
+    }
+
+    /* Language Selector */
+    .language-selector {
+      position: relative;
+      font-size: 1rem;
+      color: #ddd;
+      cursor: pointer;
+    }
+
+    /* Dropdown toggle */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Dropdown menu */
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #444;
+      border-radius: 5px;
+      width: 100px;
+      margin-top: 10px;
+    }
+
+    .language-dropdown label {
+      display: block;
+      padding: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .language-dropdown label:hover {
+      background-color: #555;
+    }
+
+    /* Display selected language */
+    #english:checked ~ .selected-language::after { content: "English"; }
+    #hindi:checked ~ .selected-language::after { content: "Hindi"; }
+    #spanish:checked ~ .selected-language::after { content: "Spanish"; }
+    #chinese:checked ~ .selected-language::after { content: "German"; }
+    #french:checked ~ .selected-language::after { content: "French"; }
+    #french:checked ~ .selected-language::after { content: "Danish"; }
+
+    /* Show dropdown menu when hovering over the language selector */
+    .language-selector:hover .language-dropdown {
+      display: block;
+    }
+    .herosection{
+        display: flex;
+
+    }
+    /* ---------------------------------- CSS Ends here for header  -------------------------------------*/
+
+    /* ---------------------------------CSS Starts here for Hero section ---------------------------- */
+
+    /* Main container styling */
+    .Herosection {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background-color: #E8DEF8;
+      /* width: 1440px; */
+      height: 571px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      gap: 30px;
+      color: #E8DEF8;
+      overflow: hidden;
+
+    }
+
+    /* Left div for the image div of about us */
+    .left-div {
+        height: 511px;
+        border-radius: 20px;
+        gap: 10px;
+    }
+
+    .left-div img {
+      /* max-width: 100%; */
+      height: 511px;
+      gap: 10px;
+    }
+
+    /* Right div for the content */
+    .right-div {
+      /* flex: 1; */
+      height: 511px;
+    }
+
+    .right-div h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .right-div p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .heroright{
+        width: 750px;
+        height: 144px;
+        color: black;
+        font-weight: 400;
+    }
+    .aboutus{
+        text-align: center;
+        width: 750px;
+        height: 52px;
+        font-weight: 700;
+        color: #21005D;
+
+    }
+
+    /* -----------------------------------------------CSS Ends here for hero section CSS---------------------------------*/
+    .frame1 {
+      background-color: #F9DEDC;
+      height: 804px;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Inner event info container */
+    .eventinfo {
+      display: flex;
+      gap: 30px;
+      background-color: #fff;
+      border-radius: 20px;
+      height: 644px;
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    /* Left div for images */
+    .eventinfo .left-div {
+      flex: 1;
+    }
+
+    .eventinfo .left-div img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Right div for event details */
+    .eventinfo .right-div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Event details */
+    .event-detail {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .event-detail img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .event-detail p {
+      font-size: 1rem;
+      color: #333;
+      margin: 0;
+    }
+
+    /* Buy Ticket button */
+    .buy-ticket {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 5px;
+      width: 109px;
+      height: 20px;
+      line-height: 20px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    /* Frame one finished */
+  </style>
+</head>
+<body>
+<!--------------------------- Here i Started the header section.. --------------------------------------->
+  <header>
+    <!-- Logo on the left -->
+    <div class="logo">Logo</div>
+
+    <!-- Centered Navigation Links -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#event">Event</a>
+      <a href="#all-events">All Events</a>
+      <a href="#footer">Footer</a>
+    </nav>
+
+    <!-- Right-aligned Language Selector -->
+    <div class="language-selector">
+      <!-- Hidden radio inputs for each language -->
+      <input type="radio" name="language" id="english" checked>
+      <input type="radio" name="language" id="hindi">
+      <input type="radio" name="language" id="spanish">
+      <input type="radio" name="language" id="German">
+      <input type="radio" name="language" id="french">
+      <input type="radio" name="language" id="Danish">
+
+      <!-- Display the currently selected language -->
+      <div class="selected-language">Language: </div>
+
+      <!-- Language Dropdown Menu -->
+      <div class="language-dropdown">
+        <label for="english">English</label>
+        <label for="hindi">Hindi</label>
+        <label for="spanish">Spanish</label>
+        <label for="chinese">German</label>
+        <label for="french">French</label>
+        <label for="french">Denish</label>
+      </div>
+    </div>
+  </header>
+  <!--------------------------- Here i finished the header section.. --------------------------------------->
+<div class="Herosection">
+    
+    <!-- Left div for the image that we put any -->
+    <div class="left-div">
+      <img src="https://st.depositphotos.com/1003593/3947/i/450/depositphotos_39479909-stock-photo-about-us-blue-marker.jpg" alt="Sample Image" width="600px" height="511px">
+    </div>
+
+    <!-- Right div for our content -->
+    <div class="right-div">
+        <h2 class="aboutus">About Us</h2>
+
+      <p class="heroright">
+        HackYourFuture is a non-profit organization dedicated to providing individuals from disadvantaged backgrounds with the skills needed to enter the tech industry. Our mission is to empower those who face significant barriers to employment by offering them a comprehensive web development education. We believe that everyone deserves the opportunity to succeed, regardless of their background or circumstances. Our program is designed to bridge the gap between potential and opportunity, creating a pathway to meaningful employment.
+      </p><br>
+      <p>
+        Our team consists of passionate volunteers and professional developers who share a common goal: to make a lasting impact on the lives of our students. By fostering a supportive and inclusive learning environment, we ensure that each trainee receives the guidance and encouragement needed to thrive. We take pride in seeing our graduates succeed in the workforce, knowing all the hard work and dedication that plays a part in their journey towards a better future.
+      </p class="heroright">
+      <p><br>
+        At HackYourFuture, diversity and inclusion are at the heart of everything we do. We embrace the unique perspectives that each student brings to the table, and we are committed to creating a community where everyone feels valued. We create a space where people enjoy being and it in up to all involved in the community to bring their ideas, contributions and effort together and share this with the group. Each person plays an important role in shaping the HackYourFuture journey.
+      </p class="heroright">
+    </div>
+
+  </div>
+
+  <!--------------------------- Here i started frame one.. --------------------------------------->
+  <!-- Main container -->
+  <div class="frame1">
+    <!-- Event Info Container -->
+    <div class="eventinfo">
+
+      <!-- Left div for image -->
+      <div class="left-div">
+        <img src="https://via.placeholder.com/150" alt="Event Image">
+      </div>
+
+      <!-- Right div for event details -->
+      <div class="right-div">
+        
+        <!-- Event time with clock icon -->
+        <div class="event-detail">
+          <img src="https://via.placeholder.com/20" alt="Clock Icon">
+          <p>Time: 10:00 AM</p>
+        </div>
+
+        <!-- Event date with calendar icon -->
+        <div class="event-detail">
+          <img src="https://via.placeholder.com/20" alt="Calendar Icon">
+          <p>Date: 24 Nov 2024</p>
+        </div>
+
+        <!-- Event location with location icon -->
+        <div class="event-detail">
+          <img src="https://via.placeholder.com/20" alt="Location Icon">
+          <p>Location: 123 Event Street, City</p>
+        </div>
+
+        <!-- Additional content -->
+        <p>
+          Join us for an unforgettable event experience. We bring together great minds and share impactful stories that inspire and motivate.
+        </p>
+
+        <!-- Buy Ticket Button -->
+        <a href="#" class="buy-ticket">Buy Ticket</a>
+      </div>
+
+    </div>
+  </div>
+   <!--------------------------- Here i finished frame one.. --------------------------------------->
+</body>
+</html>

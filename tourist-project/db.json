@@ -1,0 +1,39 @@
+{
+  "admin": [
+    {
+      "id": "1",
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "packges": [
+    {
+      "id": "1",
+      "coutry": "Indonesia",
+      "days": 5,
+      "person": 3,
+      "price": 123,
+      "desc": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos sds ss",
+      "url": "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "2",
+      "coutry": "Thailand",
+      "days": "5",
+      "person": "7",
+      "price": 342,
+      "desc": "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos sds ss",
+      "url": "https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "1730126572874",
+      "coutry": "FINLAND",
+      "days": "9",
+      "person": "9",
+      "price": "3900",
+      "desc": "Istanbul is the best city to visit in summar time. It contains half part in wurope and half in asia.",
+      "url": "https://media2.thrillophilia.com/images/photos/000/179/457/original/1573889461_shutterstock_1073688407.jpg?w=753&h=450&dpr=1.5"
+    }
+  ]
+}
