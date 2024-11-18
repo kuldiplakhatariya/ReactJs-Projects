@@ -19,7 +19,6 @@ function Viewpackages() {
     console.log(res.data)
     fetchdata()
    }
-
    const [packedit,setpackedit] = useState(null)
    const [packupdate,setpackupdate]=useState({
         id:"",

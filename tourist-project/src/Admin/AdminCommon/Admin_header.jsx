@@ -1,7 +1,21 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Admin_header({heading}) {
+    const redirect = useNavigate()
+
+    useEffect(()=>{
+        if(!localStorage.getItem("Adminid")){
+            redirect("/Admin_Login")
+        }
+    })
+    const logout=()=>{
+        localStorage.removeItem("Adminid")
+        localStorage.removeItem("Adminname")
+        redirect("/Admin_Login")
+        toast.success("Successfully Logout..!")
+    }
   return (
     <div>
          {/* Topbar Start */}
@@ -67,7 +81,37 @@ function Admin_header({heading}) {
                               </div>
                               <NavLink className="nav-item nav-link" to="/Contact">Contact</NavLink>
                           </div>
-                          <a href className="btn btn-primary rounded-pill py-2 px-4">Register</a>
+                          {/* <a href className="btn btn-primary rounded-pill py-2 px-4">Register</a> */}
+                          {(
+                                ()=>{
+                                    if(localStorage.getItem("Adminid"))
+                                    {
+                                        return(
+                                            <NavLink className="nav-item nav-link">Hello..{localStorage.getItem("Adminname")}</NavLink>
+                                            
+                                        )
+                                    }
+                                }
+                            )()}
+
+                            {(
+                                ()=>{
+                                    if(localStorage.getItem("Adminid")){
+                                        return(
+                                            <>
+                                                <NavLink className="nav-item nav-link" onClick={logout}>logout</NavLink>
+                                            </>
+                                        )
+                                    }
+                                    else{
+                                        return(
+                                            <>
+                                            <NavLink to="/alogin" className="nav-item nav-link" >Alogin</NavLink>
+                                            </>
+                                        )
+                                    }
+                                }
+                            )()}
                       </div>
                   </nav>
                   <div className="container-fluid bg-primary py-5 mb-5 hero-header">

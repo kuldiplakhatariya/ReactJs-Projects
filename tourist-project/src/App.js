@@ -18,6 +18,7 @@ import Contact from "./Pages/Contact";
 import Dashboard from "./Admin/AdminCommon/AdminCommon/Dashboard";
 import Viewpackages from "./Admin/AdminCommon/Viewpackages";
 import Addpackages from "./Admin/AdminCommon/Addpackages";
+import Admin_Login from "./Admin/AdminCommon/Admin_Login";
 // import Packageview from "./Admin/AdminCommon/Packageview";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="*" element={<Page_404_notfound />}/>
 
         {/* hide admin */}
+        <Route path="/Admin_Login" element={<Admin_Login/>}/>
         <Route path="/Dashboard" element={<Dashboard/>}/>
         <Route path="/Viewpackages" element={<Viewpackages/>} />
         <Route path="/Addpackages" element={<Addpackages/> }/>

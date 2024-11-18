@@ -2,9 +2,21 @@
   "admin": [
     {
       "id": "1",
-      "name": "admin",
-      "email": "admin@gmail.com",
+      "email": "admin1@gmail.com",
+      "name":"Admin1",
       "password": "1234"
+    },
+    {
+      "id": "2",
+      "email": "admin2@gmail.com",
+      "name":"Admin2",
+      "password": "admin2"
+    },
+    {
+      "id": "3",
+      "email": "admin3@gmail.com",
+      "name":"Admin3",
+      "password": "admin3"
     }
   ],
   "packges": [

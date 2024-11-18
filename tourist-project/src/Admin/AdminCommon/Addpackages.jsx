@@ -26,7 +26,7 @@ function Addpackages() {
 const handlesubmit=async(e)=>{
     e.preventDefault()
     const res = await axios.post("http://localhost:3000/packges",data)
-    console.log(res.data)
+    //console.log(res.data)
     setdata({
         id:"",
         coutry:"",
